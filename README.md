@@ -5,7 +5,7 @@ Made for 1.21.5.
 
 # Hide & Seek 2
 > [!Note]
-> World backups can be found [here](about:blank).
+> World backups can be found [here](https://drive.google.com/drive/folders/1m1_1K1xD9RoYFMTKipXwobhu31lcks01?usp=sharing).
 
 Hide & Seek 2 is the sequel to a Minecraft world some of my friends and I played on. We downloaded a large room map from online, then made our own modifications to turn it into a fun hide-and-seek game that we played religiously for a little while.
 
