@@ -1,0 +1,1 @@
+scoreboard players add tick hs2.timer 1
