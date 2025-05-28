@@ -3,8 +3,10 @@ execute if block -301 0 1200 redstone_block run return fail
 scoreboard players set @a alive 1
 clear @a
 gamemode adventure @a
+spawnpoint @a -410 5 1200
 
 kill @e[tag=hs2.dead_player]
+kill @e[type=item]
 
 # Select teams
 team join hs2.hiders @a

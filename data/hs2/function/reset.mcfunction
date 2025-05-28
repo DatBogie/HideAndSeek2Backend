@@ -10,6 +10,7 @@ team add hs2.seekers ["",{text:"Seeker",color:"red",bold:true}]
 team modify hs2.seekers friendlyFire false
 team modify hs2.seekers nametagVisibility hideForOtherTeams
 team modify hs2.seekers prefix ["",{text:"[Seeker] ",color:"red",bold:true}]
+spawnpoint @a -410 5 1200
 
 scoreboard players reset @a alive
 scoreboard objectives add alive deathCount

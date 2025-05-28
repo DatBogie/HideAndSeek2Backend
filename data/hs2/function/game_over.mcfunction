@@ -1,5 +1,6 @@
-tag @a[tag=hs2.was_seeker] remove hs2.was_seeker
+# tag @a[tag=hs2.was_seeker] remove hs2.was_seeker
 tag @a[team=hs2.seekers] add hs2.was_seeker
+execute unless entity @a[tag=!hs2.was_seeker] run tag @a remove hs2.was_seeker
 function hs2:reset
 clear @a
 title @a title ["",{text:"Game Over!",bold:true,color:"red"}]
