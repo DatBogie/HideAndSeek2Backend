@@ -6,3 +6,13 @@ clear @a
 title @a title ["",{text:"Game Over!",bold:true,color:"red"}]
 tp @a -410 5 1200 facing -411 5 1200
 gamemode creative @a
+
+# Run Slots
+
+# Slot 1
+setblock -400 4 1221 redstone_block
+setblock -400 4 1221 air
+
+# Slot 2
+setblock -400 4 1223 redstone_block
+setblock -400 4 1223 air

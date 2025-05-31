@@ -32,4 +32,12 @@ clone -390 4 1198 -390 7 1202 -414 5 1198
 # Start game loop
 setblock -301 0 1200 redstone_block
 
-# Start timer
+# Run Slots
+
+# Slot 1
+setblock -400 4 1215 redstone_block
+setblock -400 4 1215 air
+
+# Slot 2
+setblock -400 4 1217 redstone_block
+setblock -400 4 1217 air
