@@ -5,4 +5,4 @@ effect give @s resistance infinite 255 true
 effect give @s fire_resistance infinite 255 true
 effect give @s water_breathing infinite 255 true
 effect give @s jump_boost infinite 1 true
-effect give @s glowing infinite 255 true
+execute if score SeekersGlow hs2.config matches 1.. run effect give @s glowing infinite 255 true

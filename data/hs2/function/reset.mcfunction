@@ -31,4 +31,4 @@ scoreboard players set tick hs2.timer 0
 
 effect clear @a
 
-execute if score Reset hs2.config matches 1 run function hs2:reset_config
+execute unless score Reset hs2.config matches ..0 run function hs2:reset_config
