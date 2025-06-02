@@ -1,0 +1,1 @@
+effect give @a[team=hs2.hiders] glowing 7 255 true

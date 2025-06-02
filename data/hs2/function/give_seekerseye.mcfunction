@@ -1,0 +1,1 @@
+give @s eye_armor_trim_smithing_template[item_name=[{"text":"Seeker's Eye","color":"red"}],use_cooldown={seconds:240},food={can_always_eat:true,nutrition:0,saturation:0},consumable={animation:"none",consume_seconds:0,has_consume_particles:false}]

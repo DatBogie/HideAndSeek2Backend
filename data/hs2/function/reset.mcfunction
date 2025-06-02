@@ -29,6 +29,15 @@ scoreboard players set tick_end hs2.timer 0
 scoreboard players set count hs2.timer 0
 scoreboard players set tick hs2.timer 0
 
+scoreboard objectives add hs2.seekerEyeUsed minecraft.used:minecraft.eye_armor_trim_smithing_template
+scoreboard players reset @a hs2.seekerEyeUsed
+
+scoreboard objectives add hs2.windchargeUsed minecraft.used:minecraft.wind_charge
+scoreboard players reset @a hs2.windchargeUsed
+
+scoreboard objectives add hs2.enderPearlUsed minecraft.used:minecraft.ender_pearl
+scoreboard players reset @a hs2.enderPearlUsed
+
 effect clear @a
 
 execute unless score Reset hs2.config matches ..0 run function hs2:reset_config
