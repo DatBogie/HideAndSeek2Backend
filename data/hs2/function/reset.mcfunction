@@ -38,6 +38,9 @@ scoreboard players reset @a hs2.windchargeUsed
 scoreboard objectives add hs2.enderPearlUsed minecraft.used:minecraft.ender_pearl
 scoreboard players reset @a hs2.enderPearlUsed
 
+scoreboard objectives add hs2.gtfoUsed minecraft.used:minecraft.sugar
+scoreboard players reset @a hs2.gtfoUsed
+
 effect clear @a
 
 execute unless score Reset hs2.config matches ..0 run function hs2:reset_config

@@ -1,0 +1,1 @@
+give @s sugar[item_name=[{text:"GTFO",color:"blue",bold:true}],consumable={animation:"eat",consume_seconds:1,on_consume_effects:[{type:"apply_effects",effects:[{id:"speed",amplifier:1,duration:100}]}]},food={nutrition:0,saturation:0,can_always_eat:true},use_cooldown={seconds:60}]
