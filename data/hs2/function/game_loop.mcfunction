@@ -11,7 +11,7 @@ execute as @a[team=hs2.hiders,scores={hs2.windchargeUsed=1..}] unless data entit
 execute as @a[scores={hs2.windchargeUsed=1..}] run scoreboard players reset @s hs2.windchargeUsed
 
 execute as @a[team=hs2.seekers,scores={hs2.seekerEyeUsed=1..}] unless data entity @s Inventory[{id:"minecraft:eye_armor_trim_smithing_template"}] run function hs2:give_seekerseye
-execute as @a[team=hs2.seekers,scores={hs2.seekerEyeUsed=1..}] run function hs2:trigger_seeker_eye
+execute as @a[team=hs2.seekers,scores={hs2.seekerEyeUsed=1..}] at @s run function hs2:trigger_seeker_eye
 execute as @a[scores={hs2.seekerEyeUsed=1..}] run scoreboard players reset @s hs2.seekerEyeUsed
 
 execute as @a[team=hs2.hiders,scores={hs2.gtfoUsed=1..}] unless data entity @s Inventory[{id:"minecraft:sugar"}] run function hs2:give_gtfo
