@@ -41,6 +41,22 @@ scoreboard players reset @a hs2.enderPearlUsed
 scoreboard objectives add hs2.gtfoUsed minecraft.used:minecraft.sugar
 scoreboard players reset @a hs2.gtfoUsed
 
+scoreboard objectives add hs2.block_morphUsed minecraft.used:minecraft.spyglass
+scoreboard players reset @a hs2.block_morphUsed
+
+scoreboard objectives add hs2.raycast_length dummy
+scoreboard players reset @a hs2.raycast_length
+
+function hs2:block_reset
+
 effect clear @a
 
 execute unless score Reset hs2.config matches ..0 run function hs2:reset_config
+
+execute as @a run attribute @s scale base set 1.0
+
+kill @e[type=armor_stand,tag=hs2.raycast_hit]
+kill @e[type=block_display,tag=hs2.block]
+kill @e[type=interaction,tag=hs2.block_hitbox]
+
+scoreboard players set STARTED hs2.timer -1

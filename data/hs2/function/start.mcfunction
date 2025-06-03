@@ -1,5 +1,6 @@
 setblock -300 0 1200 bedrock
 execute if block -301 0 1200 redstone_block run return fail
+scoreboard players set STARTED hs2.timer 0
 scoreboard players set @a alive 1
 clear @a
 gamemode adventure @a
@@ -41,3 +42,8 @@ setblock -400 4 1215 air
 # Slot 2
 setblock -400 4 1217 redstone_block
 setblock -400 4 1217 air
+
+execute if score BlockHunt hs2.config matches 1.. run function hs2:block_setup
+
+scoreboard players set seeker_eye_tick hs2.timer 0
+tag @a[tag=hs2._kill_] remove hs2._kill_

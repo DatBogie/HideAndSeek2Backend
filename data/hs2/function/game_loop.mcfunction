@@ -20,3 +20,9 @@ execute as @a[scores={hs2.gtfoUsed=1..}] run scoreboard players reset @s hs2.gtf
 execute if score count hs2.timer < HideTime hs2.config run function hs2:timer_tick
 execute if score tick hs2.timer matches 21.. run function hs2:timer_count
 execute if score count hs2.timer = HideTime hs2.config run function hs2:seeker_start
+
+execute if score STARTED hs2.timer matches 1.. if score seeker_eye_tick hs2.timer matches 0.. run scoreboard players add seeker_eye_tick hs2.timer 1
+execute if score seeker_eye_tick hs2.timer >= GiveSeekerEyeAfter hs2.config as @a[team=hs2.seekers] run function hs2:give_seekerseye
+execute if score seeker_eye_tick hs2.timer >= GiveSeekerEyeAfter hs2.config run scoreboard players set seeker_eye_tick hs2.timer -1
+
+execute if score BlockHunt hs2.config matches 1.. run function hs2:block_game_loop

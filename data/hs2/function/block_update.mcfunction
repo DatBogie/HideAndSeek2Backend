@@ -1,0 +1,2 @@
+execute as @e[tag=hs2.block] if score @s hs2.block_id = @p[team=hs2.hiders] hs2.block_id align xyz run tp @s ~ ~ ~
+execute as @e[tag=hs2.block_hitbox] if score @s hs2.block_id = @p[team=hs2.hiders] hs2.block_id align xyz run tp @s ~0.5 ~-.5 ~0.5

@@ -1,3 +1,4 @@
+scoreboard players set STARTED hs2.timer 1
 scoreboard players add count hs2.timer 1
 scoreboard players reset tick hs2.timer
 tp @a[team=hs2.seekers] -411 31 1199 facing -412 31 1199
