@@ -47,3 +47,5 @@ execute if score BlockHunt hs2.config matches 1.. run function hs2:block_setup
 
 scoreboard players set seeker_eye_tick hs2.timer 0
 tag @a[tag=hs2._kill_] remove hs2._kill_
+
+scoreboard players set round_tick hs2.timer 0
