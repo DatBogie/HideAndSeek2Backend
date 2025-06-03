@@ -1,6 +1,7 @@
 execute as @a[scores={alive=2..},team=hs2.hiders] run function hs2:player_dead
 execute as @a[scores={alive=1..},team=!hs2.hiders] run scoreboard players reset @s alive
 
+execute unless entity @a[team=hs2.hiders] run scoreboard players set STARTED hs2.timer -1
 execute if score tick_end hs2.timer matches ..39 unless entity @a[team=hs2.hiders] run scoreboard players add tick_end hs2.timer 1
 execute if score tick_end hs2.timer matches 40.. unless entity @a[team=hs2.hiders] run function hs2:game_over
 
@@ -25,8 +26,8 @@ execute if score STARTED hs2.timer matches 1.. if score seeker_eye_tick hs2.time
 execute if score seeker_eye_tick hs2.timer >= GiveSeekerEyeAfter hs2.config as @a[team=hs2.seekers] run function hs2:give_seekerseye
 execute if score seeker_eye_tick hs2.timer >= GiveSeekerEyeAfter hs2.config run scoreboard players set seeker_eye_tick hs2.timer -1
 
-execute if score STARTED hs2.timer matches 1.. if score round_tick hs2.timer < RoundTimeLimit hs2.config run scoreboard players add round_tick hs2.timer 1
-execute if score STARTED hs2.timer matches 1.. if score round_tick hs2.timer >= RoundTimeLimit hs2.config run kill @a[team=hs2.hiders]
-
+execute if score STARTED hs2.timer matches 1.. if score round_count hs2.timer < RoundTimeLimit hs2.config if score round_tick hs2.timer matches 20.. run function hs2:round_timer_count
+execute if score STARTED hs2.timer matches 1.. if score round_count hs2.timer < RoundTimeLimit hs2.config run scoreboard players add round_tick hs2.timer 1
+execute if score STARTED hs2.timer matches 1.. if score round_count hs2.timer >= RoundTimeLimit hs2.config run function hs2:time_over
 
 execute if score BlockHunt hs2.config matches 1.. run function hs2:block_game_loop

@@ -49,3 +49,11 @@ scoreboard players set seeker_eye_tick hs2.timer 0
 tag @a[tag=hs2._kill_] remove hs2._kill_
 
 scoreboard players set round_tick hs2.timer 0
+scoreboard players set round_count hs2.timer 0
+
+bossbar set hs2:round_timer name {text:"Hide.",bold:true,color:"red"}
+execute store result bossbar hs2:round_timer max run scoreboard players get HideTime hs2.config
+bossbar set hs2:round_timer color red
+bossbar set hs2:round_timer value 0
+bossbar set hs2:round_timer players @a
+bossbar set hs2:round_timer visible true

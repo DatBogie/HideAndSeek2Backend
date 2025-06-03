@@ -60,3 +60,10 @@ kill @e[type=block_display,tag=hs2.block]
 kill @e[type=interaction,tag=hs2.block_hitbox]
 
 scoreboard players set STARTED hs2.timer -1
+
+bossbar add hs2:round_timer {text:"Round",color:"blue",bold:true}
+bossbar set hs2:round_timer color blue
+bossbar set hs2:round_timer players @a
+bossbar set hs2:round_timer style progress
+bossbar set hs2:round_timer visible false
+tag @a[tag=hs2.end_hiders] remove hs2.end_hiders
