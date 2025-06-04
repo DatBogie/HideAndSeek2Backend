@@ -1,5 +1,5 @@
 execute unless entity @e[type=armor_stand,tag=hs2.hider_spawn] run tp @s -328.5 4.0 1290.0 facing -328.0 4.0 1290.0
-execute if entity @e[type=armor_stand,tag=hs2.seeker_spawn] at @s run tp @s @e[type=armor_stand,tag=hs2.seeker_spawn,limit=1,sort=nearest]
+execute at @s as @e[type=armor_stand,tag=hs2.seeker_spawn,sort=random,limit=1] run tp @p[team=hs2.seekers] @s
 
 function hs2:give_speedystick
 give @s ender_pearl[use_cooldown={seconds:60}]

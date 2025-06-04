@@ -8,6 +8,6 @@ bossbar set hs2:round_timer visible true
 scoreboard players add count hs2.timer 1
 scoreboard players reset tick hs2.timer
 execute unless entity @e[type=armor_stand,tag=hs2.hider_spawn] run tp @a[team=hs2.seekers] -411 31 1199 facing -412 31 1199
-execute if entity @e[type=armor_stand,tag=hs2.hider_spawn] as @a[team=hs2.seekers] at @s run tp @s @e[type=armor_stand,tag=hs2.hider_spawn,limit=1,sort=nearest]
+execute at @s as @e[type=armor_stand,tag=hs2.hider_spawn,sort=random,limit=1] run tp @p[team=hs2.seekers] @s
 execute unless score Murder hs2.config matches 1.. run title @a[team=hs2.seekers] title ["",{text:"Go!",italic:true,bold:true,color:"blue"}]
 execute unless score Murder hs2.config matches 1.. run title @a[team=hs2.hiders] title ["",{text:"Run!",italic:true,bold:true,color:"red"}]

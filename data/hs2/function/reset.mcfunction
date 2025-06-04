@@ -12,7 +12,8 @@ team modify hs2.seekers friendlyFire false
 team modify hs2.seekers nametagVisibility hideForOtherTeams
 team modify hs2.seekers prefix ["",{text:"[Seeker] ",color:"red",bold:true}]
 team modify hs2.hiders deathMessageVisibility always
-spawnpoint @a -410 5 1200
+execute unless entity @e[type=armor_stand,tag=hs2.respawn_point] run spawnpoint @a -410 5 1200
+execute as @e[type=armor_stand,tag=hs2.respawn_point,sort=random,limit=1] at @s run spawnpoint @a ~ ~ ~
 
 scoreboard players reset @a alive
 scoreboard objectives add alive deathCount

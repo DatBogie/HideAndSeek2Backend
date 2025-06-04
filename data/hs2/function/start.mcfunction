@@ -4,7 +4,8 @@ scoreboard players set STARTED hs2.timer 0
 scoreboard players set @a alive 1
 clear @a
 gamemode adventure @a
-spawnpoint @a -410 5 1200
+execute unless entity @e[type=armor_stand,tag=hs2.respawn_point] run spawnpoint @a -410 5 1200
+execute as @e[type=armor_stand,tag=hs2.respawn_point,sort=random,limit=1] at @s run spawnpoint @a ~ ~ ~
 
 tag @a[tag=hs2.end_hiders] remove hs2.end_hiders
 
