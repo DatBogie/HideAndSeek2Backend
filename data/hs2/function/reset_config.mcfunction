@@ -5,3 +5,5 @@ scoreboard players set SeekersGlow hs2.config 1
 scoreboard players set BlockHunt hs2.config 0
 scoreboard players set GiveSeekerEyeAfter hs2.config 3600
 scoreboard players set RoundTimeLimit hs2.config 1800
+scoreboard players set Murder hs2.config 0
+scoreboard players set Murder.GiveWeaponsAfter hs2.config 300

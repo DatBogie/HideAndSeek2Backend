@@ -2,3 +2,4 @@ tellraw @a ["",{text:"Loaded: "},{text:"W",bold:true,obfuscated:true,color:"#B7B
 spawnpoint @a -410 5 1200
 tag @a remove hs2.was_seeker
 function hs2:reset
+tag @a[tag=hs2.end_hiders] remove hs2.end_hiders

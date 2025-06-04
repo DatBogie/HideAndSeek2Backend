@@ -2,14 +2,16 @@ setblock -300 0 1200 bedrock
 setblock -301 0 1200 bedrock
 
 team leave @a
-team add hs2.hiders ["",{text:"Hider",color:"blue",bold:true}]
+team add hs2.hiders ["",{text:"Hiders",color:"blue",bold:true}]
 team modify hs2.hiders friendlyFire true
 team modify hs2.hiders nametagVisibility never
 team modify hs2.hiders prefix ["",{text:"[Hider] ",color:"blue",bold:true}]
-team add hs2.seekers ["",{text:"Seeker",color:"red",bold:true}]
+team modify hs2.hiders deathMessageVisibility always
+team add hs2.seekers ["",{text:"Seekers",color:"red",bold:true}]
 team modify hs2.seekers friendlyFire false
 team modify hs2.seekers nametagVisibility hideForOtherTeams
 team modify hs2.seekers prefix ["",{text:"[Seeker] ",color:"red",bold:true}]
+team modify hs2.hiders deathMessageVisibility always
 spawnpoint @a -410 5 1200
 
 scoreboard players reset @a alive
@@ -66,4 +68,9 @@ bossbar set hs2:round_timer color blue
 bossbar set hs2:round_timer players @a
 bossbar set hs2:round_timer style progress
 bossbar set hs2:round_timer visible false
-tag @a[tag=hs2.end_hiders] remove hs2.end_hiders
+
+scoreboard objectives add hs2.murder_knifeThrown minecraft.used:minecraft.stick
+scoreboard players reset @a hs2.murder_knifeThrown
+
+kill @e[tag=hs2.murder_raycast_hit]
+scoreboard players reset @a hs2.raycast_length
