@@ -1,5 +1,5 @@
 execute unless entity @e[type=armor_stand,tag=hs2.hider_spawn] run tp @s -411 31 1199 facing -412 31 1199
-execute if entity @e[type=armor_stand,tag=hs2.hider_spawn] at @s run tp @s @e[type=armor_stand,tag=hs2.hider_spawn,limit=1,sort=nearest]
+execute at @s as @e[type=armor_stand,tag=hs2.hider_spawn,sort=random,limit=1] run tp @p @s
 
 scoreboard players set @s alive 1
 
