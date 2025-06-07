@@ -74,3 +74,9 @@ execute if score Murder hs2.config matches 1.. run function hs2:murder_setup
 kill @e[tag=hs2.murder_raycast_hit]
 
 scoreboard players reset @a hs2.raycast_length
+
+execute as @e[type=armor_stand,tag=hs2.spawn] run data merge entity @s {Invisible:true,Marker:true,Small:false,CustomNameVisible:false,equipment:{head:{}}}
+execute as @e[type=armor_stand,tag=hs2.spawn] run data remove entity @s equipment.head
+
+scoreboard players reset @a hs2.murder_bow_used
+kill @e[type=item_display,tag=hs2.murder_bow]

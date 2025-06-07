@@ -1,3 +1,6 @@
+execute if entity @a[tag=hs2.end_hiders] run scoreboard players add @a[team=hs2.hiders] hs2.score 1
+execute unless entity @a[tag=hs2.end_hiders] run scoreboard players add @a[team=hs2.seekers] hs2.score 1
+
 # tag @a[tag=hs2.was_seeker] remove hs2.was_seeker
 tag @a[team=hs2.seekers] add hs2.was_seeker
 execute unless entity @a[tag=!hs2.was_seeker] run tag @a remove hs2.was_seeker

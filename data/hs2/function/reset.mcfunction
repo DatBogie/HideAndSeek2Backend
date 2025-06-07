@@ -75,3 +75,17 @@ scoreboard players reset @a hs2.murder_knifeThrown
 
 kill @e[tag=hs2.murder_raycast_hit]
 scoreboard players reset @a hs2.raycast_length
+
+execute as @e[type=armor_stand,tag=hs2.spawn] run data merge entity @s {Invisible:false,Marker:false,Small:true,CustomNameVisible:true,equipment:{head:{id:"player_head",components:{profile:{id:[I;-1040225899,-1126871523,-1271360250,1313847604],properties:[{name:"textures",value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWQ3OGQ4MDkxODlmZTBkMmIwZjUzNjFmZjJlN2Y0ODM3OWQ1NjJhNjNiMTBmMTVjNjAzMWJmZTNmZDAwMDhkIn19fQ=="}]}}}}}
+
+data modify storage hs2:help help set value "/function hs2:help {cmd:<string>}'\n  > 'Shows a help blurb for a command (if defined).'\n  > 'Do not include cmd's namespace (\"hs2:\").'\n  > 'The first line of a help blurb is the usage.'\n  > 'The second line is a description.'\n  > 'Following lines are notes/comments.'\n  > 'To define your own, simply run:'\n  > '/data modify storage hs2:help <name> <string>'\n  > 'Where <name> is the command's name, and <string> is the help blurb."
+data modify storage hs2:help give_spawn_point set value "/function hs2:give_spawn_point {type:< \"seeker\" || \"hider\" || \"respawn\" >}"
+data modify storage hs2:help add_spawn_point set value "/function hs2:add_spawn_point {type:< \"seeker\" || \"hider\" || \"respawn\" >, x:<float>, y:<float>, z:<float>}"
+
+scoreboard objectives add hs2.murder_bow_used minecraft.used:minecraft.bow
+scoreboard players reset @a hs2.murder_bow_used
+
+kill @e[type=item_display,tag=hs2.murder_bow]
+
+scoreboard objectives add hs2.score dummy "Scores"
+scoreboard objectives setdisplay list hs2.score
