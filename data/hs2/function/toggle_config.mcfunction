@@ -1,5 +1,2 @@
-execute if score Visible hs2.config matches ..0 run scoreboard objectives setdisplay sidebar hs2.config
-execute if score Visible hs2.config matches ..0 run scoreboard players set Visible hs2.config 1
-
-execute if score Visible hs2.config matches 1.. run scoreboard objectives setdisplay sidebar
-execute if score Visible hs2.config matches 1.. run scoreboard players set Visible hs2.config 0
+execute if score Visible hs2.config matches ..0 run return run function hs2:toggle_config_show
+execute if score Visible hs2.config matches 1.. run return run function hs2:toggle_config_hide
