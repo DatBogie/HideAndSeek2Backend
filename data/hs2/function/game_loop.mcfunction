@@ -25,9 +25,9 @@ execute unless score Murder hs2.config matches 1.. if score count hs2.timer < Hi
 execute unless score Murder hs2.config matches 1.. if score tick hs2.timer matches 21.. run function hs2:timer_count
 execute unless score Murder hs2.config matches 1.. if score count hs2.timer = HideTime hs2.config run function hs2:seeker_start with storage hs2:round
 
-execute if score STARTED hs2.timer matches 1.. if score seeker_eye_tick hs2.timer matches 0.. run scoreboard players add seeker_eye_tick hs2.timer 1
-execute if score seeker_eye_tick hs2.timer >= GiveSeekerEyeAfter hs2.config as @a[team=hs2.seekers] run function hs2:give_seekerseye
-execute if score seeker_eye_tick hs2.timer >= GiveSeekerEyeAfter hs2.config run scoreboard players set seeker_eye_tick hs2.timer -1
+execute unless score Murder hs2.config matches 1.. if score STARTED hs2.timer matches 1.. if score seeker_eye_tick hs2.timer matches 0.. run scoreboard players add seeker_eye_tick hs2.timer 1
+execute unless score Murder hs2.config matches 1.. if score seeker_eye_tick hs2.timer >= GiveSeekerEyeAfter hs2.config as @a[team=hs2.seekers] run function hs2:give_seekerseye
+execute unless score Murder hs2.config matches 1.. if score seeker_eye_tick hs2.timer >= GiveSeekerEyeAfter hs2.config run scoreboard players set seeker_eye_tick hs2.timer -1
 
 execute if score STARTED hs2.timer matches 1.. if score round_count hs2.timer < RoundTimeLimit hs2.config if score round_tick hs2.timer matches 20.. run function hs2:round_timer_count
 execute if score STARTED hs2.timer matches 1.. if score round_count hs2.timer < RoundTimeLimit hs2.config run scoreboard players add round_tick hs2.timer 1
