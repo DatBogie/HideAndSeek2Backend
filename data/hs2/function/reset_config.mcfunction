@@ -8,3 +8,4 @@ scoreboard players set Murder hs2.config 0
 scoreboard players set Murder.GiveWeaponsAfter hs2.config 300
 scoreboard players set Murder.GoldSpawnRate hs2.config 600
 scoreboard players set Murder.GoldSpawnChance hs2.config 35
+scoreboard players set Visible hs2.config 0
