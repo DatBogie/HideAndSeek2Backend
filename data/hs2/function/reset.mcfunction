@@ -98,6 +98,7 @@ scoreboard objectives add hs2.maps dummy "Registered Maps"
 scoreboard players set default hs2.maps 1
 
 scoreboard objectives add hs2.map_sel dummy
+execute unless score maps hs2.map_sel matches 1.. run scoreboard players set maps hs2.map_sel 1
 
 scoreboard objectives add hs2.murder_killedby_friendly killedByTeam.blue
 scoreboard players reset @a hs2.murder_killedby_friendly
