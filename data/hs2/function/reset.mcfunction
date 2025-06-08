@@ -97,6 +97,8 @@ scoreboard objectives setdisplay list hs2.score
 scoreboard objectives add hs2.maps dummy "Registered Maps"
 scoreboard players set default hs2.maps 1
 
+scoreboard objectives add hs2.map_sel dummy
+
 scoreboard objectives add hs2.murder_killedby_friendly killedByTeam.blue
 scoreboard players reset @a hs2.murder_killedby_friendly
 
@@ -117,5 +119,3 @@ kill @e[tag=hs2.murder_gold]
 
 scoreboard objectives add hs2.murder_gold dummy
 scoreboard players reset @a hs2.murder_gold
-
-say hi
