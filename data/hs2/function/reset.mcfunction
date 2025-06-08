@@ -117,3 +117,5 @@ kill @e[tag=hs2.murder_gold]
 
 scoreboard objectives add hs2.murder_gold dummy
 scoreboard players reset @a hs2.murder_gold
+
+say hi

@@ -89,3 +89,6 @@ scoreboard players reset @a hs2.murder_killed_player
 kill @e[type=arrow]
 
 $execute if score Murder hs2.config matches 1.. as @e[type=armor_stand,tag=hs2.murder_gold_spawn,tag=hs2.$(map)_spawn] run scoreboard players operation @s hs2.timer = GoldSpawnRate hs2.config
+
+scoreboard objectives setdisplay sidebar
+scoreboard players set Visible hs2.config 0
