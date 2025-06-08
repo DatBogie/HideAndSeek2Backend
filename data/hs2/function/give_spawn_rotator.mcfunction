@@ -1,0 +1,1 @@
+give @s netherite_hoe[item_name="Spawn Rotator"]

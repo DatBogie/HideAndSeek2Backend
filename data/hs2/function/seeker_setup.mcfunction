@@ -1,5 +1,9 @@
-execute unless entity @e[type=armor_stand,tag=hs2.hider_spawn] run tp @s -328.5 4.0 1290.0 facing -328.0 4.0 1290.0
-execute at @s as @e[type=armor_stand,tag=hs2.seeker_spawn,sort=random,limit=1] run tp @p[team=hs2.seekers] @s
+# params: {
+#  "map": <string>
+# }
+
+$execute unless score Murder hs2.config matches 1.. unless entity @e[type=armor_stand,tag=hs2.hider_spawn,tag=hs2.$(map)_spawn] run tp @s -328.5 4.0 1290.0 facing -328.0 4.0 1290.0
+$execute unless score Murder hs2.config matches 1.. at @s as @e[type=armor_stand,tag=hs2.seeker_spawn,tag=hs2.$(map)_spawn,sort=random,limit=1] run tp @p[team=hs2.seekers] @s
 
 function hs2:give_speedystick
 give @s ender_pearl[use_cooldown={seconds:60}]

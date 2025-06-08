@@ -1,1 +1,2 @@
-setblock -300 0 1200 redstone_block
+# Legacy carry-over
+function hs2:start {map:"default"}

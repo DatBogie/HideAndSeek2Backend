@@ -1,5 +1,5 @@
 # params: {
-#   "cmd": <string> // The command to ask about
+#  "cmd": <string> // The command to ask about
 # }
 
 # Valid Command

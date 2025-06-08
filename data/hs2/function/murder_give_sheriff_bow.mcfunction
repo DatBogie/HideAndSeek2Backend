@@ -1,2 +1,3 @@
-give @s bow[enchantment_glint_override=false,enchantments={power:255},tooltip_display={hidden_components:[enchantments]},lore=[{text:"One shot, one kill.",italic:true}]]
+execute if entity @s[tag=hs2.sheriff] unless data entity @s Inventory[{id:"minecraft:bow"}] run give @s bow[use_cooldown={seconds:10s},enchantment_glint_override=false,enchantments={power:255,infinity:1},tooltip_display={hidden_components:[enchantments]},lore=[{text:"One shot, one kill.",italic:true}]]
+execute unless entity @s[tag=hs2.sheriff] unless data entity @s Inventory[{id:"minecraft:bow"}] run give @s bow[use_cooldown={seconds:5s},enchantment_glint_override=false,enchantments={power:255},tooltip_display={hidden_components:[enchantments]},lore=[{text:"One shot, one kill.",italic:true}]]
 give @s arrow

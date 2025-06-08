@@ -1,0 +1,1 @@
+function hs2:game_over with storage hs2:round

@@ -1,11 +1,17 @@
-setblock -300 0 1200 bedrock
+# params: {
+#  "map": <string> // The name of the map to start on
+# }
+
 execute if block -301 0 1200 redstone_block run return fail
+
+$data modify storage hs2:round map set value $(map)
+
 scoreboard players set STARTED hs2.timer 0
 scoreboard players set @a alive 1
 clear @a
 gamemode adventure @a
-execute unless entity @e[type=armor_stand,tag=hs2.respawn_spawn] run spawnpoint @a -410 5 1200
-execute as @e[type=armor_stand,tag=hs2.respawn_spawn,sort=random,limit=1] at @s run spawnpoint @a ~ ~ ~
+$execute unless entity @e[type=armor_stand,tag=hs2.respawn_spawn,tag=hs2.$(map)_spawn] run spawnpoint @a -410 5 1200
+$execute as @e[type=armor_stand,tag=hs2.respawn_spawn,tag=hs2.$(map)_spawn,sort=random,limit=1] at @s run spawnpoint @a ~ ~ ~
 
 tag @a[tag=hs2.end_hiders] remove hs2.end_hiders
 
@@ -16,20 +22,17 @@ kill @e[type=item]
 team join hs2.hiders @a
 execute unless score Murder hs2.config matches 1.. run team join hs2.seekers @r[tag=!hs2.was_seeker]
 execute if score Murder hs2.config matches 1.. run team join hs2.seekers @r
+tag @a[team=hs2.seekers] add hs2.seeker
+tag @a[team=hs2.hiders] add hs2.hider
 
 scoreboard players reset @a[team=!hs2.hiders] alive
 scoreboard players set count hs2.timer 0
 scoreboard players set tick hs2.timer 0
 scoreboard players set tick_end hs2.timer 0
-# scoreboard objectives setdisplay sidebar alive
-
-# Set persmission level >=3
-# deop @a
-# tellraw @a ["",{text:"De-opped everyone!",color:"gold"}]
 
 # Setup players
-execute as @a[team=hs2.seekers] run function hs2:seeker_setup
-execute as @a[team=hs2.hiders] run function hs2:hider_setup
+execute as @a[team=hs2.seekers] run function hs2:seeker_setup with storage hs2:round
+execute as @a[team=hs2.hiders] run function hs2:hider_setup with storage hs2:round
 
 # Close gate
 clone -390 4 1198 -390 7 1202 -414 5 1198
@@ -80,3 +83,9 @@ execute as @e[type=armor_stand,tag=hs2.spawn] run data remove entity @s equipmen
 
 scoreboard players reset @a hs2.murder_bow_used
 kill @e[type=item_display,tag=hs2.murder_bow]
+scoreboard players reset @a hs2.murder_killedby_friendly
+scoreboard players reset @a hs2.murder_killed_player
+
+kill @e[type=arrow]
+
+$execute if score Murder hs2.config matches 1.. as @e[type=armor_stand,tag=hs2.murder_gold_spawn,tag=hs2.$(map)_spawn] run scoreboard players operation @s hs2.timer = GoldSpawnRate hs2.config
