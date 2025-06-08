@@ -119,4 +119,4 @@ scoreboard objectives add hs2.murder_gold dummy
 scoreboard players reset @a hs2.murder_gold
 
 scoreboard objectives add hs2.map_sel dummy
-execute if score maps hs2.map_sel matches ..0 run scoreboard players set maps hs2.map_sel 1
+execute unless score maps hs2.map_sel matches 1.. run scoreboard players set maps hs2.map_sel 1
