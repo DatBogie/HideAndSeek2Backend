@@ -1,1 +1,0 @@
-data merge block -410 6 1203 {front_text:{has_glowing_text:true,color:white,messages:["",{text:"Selected",bold:true,underlined:true},{score:{name:"sel",objective:"hs2.map_sel"}},""]}}
